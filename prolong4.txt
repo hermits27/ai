@@ -1,0 +1,16 @@
+plant(rose).
+plant(oak).
+plant(tulip).
+tree(oak).
+flower(rose).
+flower(tulip).
+
+green(X) :- plant(X).          % all plants are green
+beautiful(X) :- flower(X).     % all flowers are beautiful
+
+% Queries
+plant(rose).
+tree(oak).
+beautiful(tulip).
+green(X).
+beautiful(oak).    % should fail

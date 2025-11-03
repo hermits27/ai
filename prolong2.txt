@@ -1,0 +1,18 @@
+
+
+
+fruit(apple).
+fruit(banana).
+fruit(orange).
+
+drink(juice).
+drink(water).
+
+snack(X) :- fruit(X).          % any fruit is a snack
+refreshment(X) :- drink(X).    % any drink is a refreshment
+
+% Queries
+fruit(apple).
+snack(banana).
+refreshment(juice).
+snack(juice).    % should fail (juice is not a fruit)

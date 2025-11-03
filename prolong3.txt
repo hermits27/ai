@@ -1,0 +1,13 @@
+vehicle(car).
+vehicle(bike).
+vehicle(bus).
+vehicle(train).
+
+land_transport(X) :- vehicle(X), X \= train.
+public_transport(X) :- X = bus ; X = train.
+
+% Queries
+vehicle(car).
+land_transport(bike).
+public_transport(bus).
+public_transport(car).    % should fail

@@ -1,13 +1,17 @@
-food(burger).	
-food(sandwich).	
-food(pizza).	
-lunch(sandwich).	
-dinner(pizza).
+animal(dog).
+animal(cat).
+animal(elephant).
+
+pet(dog).
+pet(cat).
+
+domestic(X) :- pet(X).     % pets are domestic animals
+wild(X) :- animal(X), \+ pet(X).   % animals that are not pets are wild
 
 
-meal(X) :- food(X).
 
-queries
-food(pizza).
-meal(X), lunch(X).
-dinner(sandwich).
+% Queries
+animal(elephant).
+domestic(dog).
+wild(elephant).
+wild(cat).    % should fail

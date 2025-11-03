@@ -1,0 +1,20 @@
+student(alice).
+student(bob).
+student(charlie).
+
+course(math).
+course(science).
+course(history).
+
+enrolled(alice, math).
+enrolled(bob, science).
+enrolled(charlie, history).
+
+studies(X, Y) :- enrolled(X, Y).      % a student studies a course if enrolled
+
+% Queries
+student(alice).
+course(math).
+studies(alice, math).
+studies(bob, history).    % should fail
+enrolled(X, science).     % find who studies science
